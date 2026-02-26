@@ -1,11 +1,45 @@
 Date Of Creation:: 26/02/2026
 Date Of Last Update: 26/02/2026
 
+Key Tech:
+Oracel Cloud, Putty
+
 In this file contains:
 A step by step tutorial on how to host a website for free using Oracle Cloud Free Tier virtual machine
 
 Steps:
 
+CREATING THE VM
+1. In Menu select compute > instance then Create a new instance (free tier only allows 2)
+
+2. In Creation set image to Ubuntu, and shape to VM.Standard.E2.1.Micro (we dont pick the more powerfull Ampere as free instance)
+
+3. In Networking Tab during creation remember to download and save SSH keys
+
+4. Create The VM
+
+SETTING UP NETWORK
+5. Access the VM and click on Networking, then click the Subnet, then click Security, then click the Secuirtyy List, then click Security Rules
+
+6. On this page we want ot add a Ingress Rule Just to allow us access details are
+Source Type: CIDR
+Source CIDR: 0.0.0.0/0
+IP Protocol: TCP
+Destination Port Range: 80
+Description (optional but reccomended) : Allow HTTP Connections 
+
+CONNECTING FROM LOCAL MACHINE
+1. Download Putty and PuttyGen
+2. Launch Putty Gen and press load select your saved private key, then press save private key
+3. Now on standard putty go to connection>ssh>Auth>Credentials and open your newly saved key
+4. Copy username and the public IP address from Oracle into Putty Host Name  in format "username@publicip" then press open (dont worry about the port, name it whatever)
+
+INSIDE THE SERVER TERMINAL
+1. Do "sudo apt update" then "sudo apt upgrade"  just upgrades dependencies
+
 Sources:
 Source:https://www.youtube.com/watch?v=yWVD6qmQrb8&t=58s
-TLDR: A video explaing all the steps for the free webhosting
+TLDR: A video explaing all the steps for setting up a ubuntu server
+Souce: https://www.youtube.com/watch?v=pWDHUlvcAsg
+TLDR: using Putty to let me SSH on windows
+
