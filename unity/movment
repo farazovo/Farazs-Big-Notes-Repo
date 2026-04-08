@@ -4,6 +4,9 @@ https://www.youtube.com/watch?v=z3dequX5g_E
 https://www.youtube.com/watch?v=e94KggaEAr4&t=214s
 tldr: compares character controller and rigid body also hgihlights common isses/solutions with rigidbody
 
+Input System:
+old unity just did get key checks new unity uses a input system that we shoudl use
+https://www.youtube.com/watch?v=ONlMEZs9Rgw
 
 Using Charcter Controller:
 quick 2min tutorial https://www.youtube.com/watch?v=1uW-GbHrtQc
